@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header-text-center">Cart Menu</div>
+                <div class="card-header text-center" style="font-size: 30px; font-weight: bold">Cart Menu</div>
 
                 <div class="card-body">
                     <table class="table table-striped">
@@ -43,7 +43,11 @@
                         @endforeach
                         </tbody>
                     </table>
-                    <a href="{{ route('carts.create') }}" class="btn btn-md btn-success mb-3">ADD CART</a>
+                    <div class="display-flex align-items-between">
+                        <a href="{{ route('recipes.index') }}" class="btn btn-md btn-primary text-start mb-3">BACK</a>
+                        <a href="{{ route('carts.create') }}" class="btn btn-md btn-success text-end mb-3">ADD CART</a>
+                    </div>
+                   
                 </div>
             </div>
         </div>

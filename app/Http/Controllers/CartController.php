@@ -20,6 +20,32 @@ class CartController extends Controller
         return view('carts.create', compact('recipes'));
     }
 
+    public function edit(Cart $cart){
+        $recipes = Recipe::all();
+        return view('carts.edit', compact('recipes', 'cart'));
+    }
+
+    public function update(Request $request, Cart $cart){
+        // dd($request->all());
+        $request->validate([
+            'item'=>'required',
+            'quantity'=>'required',
+            'status'=>'required'
+        ]);
+
+        $cart -> update([
+            'item'=>$request->item, 
+            'quantity'=>$request->quantity,
+            'recipe_id'=>$request->recipe_id,
+            'status'=>$request->status
+        ]);
+
+        $cart->fill($request->post())->save();
+
+        // $this->show($request->recipe_id);
+        return redirect()->route('carts.show', $request->recipe_id);
+    }
+
     public function store(Request $request){
         // dd($request->all());
         $request->validate([

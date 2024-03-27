@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header-text-center">Recipe Menu</div>
+                <div class="card-header text-center" style="font-size: 30px; font-weight: bold">Recipe Menu</div>
 
                 <div class="card-body">
                     <table class="table table-striped">
